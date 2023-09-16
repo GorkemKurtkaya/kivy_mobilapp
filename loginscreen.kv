@@ -1,0 +1,336 @@
+#: import utils kivy.utils
+
+
+<LoginScreen>:
+    GridLayout:
+
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+
+        BoxLayout:
+            size_hint: 1,.5
+            padding: 10
+            Image:
+                source: "images/mind.png"
+
+        GridLayout:
+            padding: 15,15
+            spacing: 20,20
+            cols: 1
+            Label:
+
+                text: "English Puzzle"
+                font_size: "20sp"
+
+            TextInput:
+                id: username_login
+                hint_text: "Username"
+
+            
+            TextInput:
+                id: password_login
+                hint_text: "Password"
+                password: True
+                
+
+            Button:
+
+
+                text: "Login"
+                on_press: root.login(root.ids.username_login.text, root.ids.password_login.text)
+
+            Label:
+                id: wrong
+                text: ""
+
+        GridLayout:
+            cols: 2
+            size_hint: 1, 0.1
+            padding: 1,1
+            spacing: 10,0
+            Button:
+
+                text: "Forgot Password"
+                background_color: 1,1,1,0
+                opacity: 1 if self.state == "normal" else .5
+
+            Button:
+
+                text: "Sign Up"
+                background_color: 1,1,1,0
+                opacity: 1 if self.state == "normal" else .5
+                on_press: root.sign_up()
+
+
+<SignUpScreen>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        BoxLayout:
+            size_hint: 1,.5
+            padding: 20,20
+            Image:
+                source: "images/mind.png"
+
+        GridLayout:
+            cols: 1
+            padding: 15,15
+            spacing: 20,20
+            Label:
+                text: "Sign Up Screen"
+                font_size: "20sp"
+            
+            Label:
+                text: ""
+
+            TextInput:
+                id: username
+                hint_text: "Username"
+
+            TextInput:
+                id: password
+                hint_text: "Password"
+                password: True
+
+            Label:
+                text: ""
+
+
+            Button:
+                text: "Sign Up"
+                on_press: root.add_user(root.ids.username.text, root.ids.password.text)
+
+
+<SignUpSuccessScreen>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        GridLayout:
+            cols: 1
+            padding: 20,20
+            Label:
+                text: "Sign Up Successful!"
+
+            Button:
+                size_hint: 1,.1
+                text: "Login Page"
+                on_press: root.go_to_login_page()
+
+<HomeScreen>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        cols: 1
+        padding: 20,20
+        Button:
+            size_hint: 1,.5
+            text: "Logout"
+            on_press: root.logout()
+
+        Label:
+            text: "English"
+            font_size: "20sp"
+
+        Label:
+            text: "Hi!"
+        
+        Label:
+            text: "Turkish"
+            font_size: "20sp"
+
+        Label:
+            text: "Merhaba!"
+
+        Button:
+            size_hint: 1,.5
+            text: "Devam"
+            on_press: root.go_to_homescreen()
+
+<HomeScreen02>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        cols: 1
+        padding: 20,20
+        Button:
+            size_hint: 1,.5
+            text: "Logout"
+            on_press: root.logout()
+
+        Label:
+            text: "English"
+            font_size: "20sp"
+
+        Label:
+            text: "Apple"
+        
+        Label:
+            text: "Turkish"
+            font_size: "20sp"
+
+        Label:
+            text: "Elma"
+
+        Button:
+            size_hint: 1,.5
+            text: "Devam"
+            on_press: root.go_to_homescreen2()
+
+<HomeScreen03>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        cols: 1
+        padding: 20,20
+        Button:
+            size_hint: 1,.5
+            text: "Logout"
+            on_press: root.logout()
+
+        Label:
+            text: "English"
+            font_size: "20sp"
+
+        Label:
+            text: "Orange"
+        
+        Label:
+            text: "Turkish"
+            font_size: "20sp"
+
+        Label:
+            text: "Portakal/Turuncu"
+
+        Button:
+            size_hint: 1,.5
+            text: "Devam"
+            on_press: root.go_to_homescreen4()
+
+
+<HomeScreen04>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        cols: 1
+        padding: 20,20
+        Button:
+            size_hint: 1,.5
+            text: "Logout"
+            on_press: root.logout()
+
+        Label:
+            text: "English"
+            font_size: "20sp"
+
+        Label:
+            text: "Wrong"
+        
+        Label:
+            text: "Turkish"
+            font_size: "20sp"
+
+        Label:
+            text: "Yanlis"
+
+        Button:
+            size_hint: 1,.5
+            text: "Devam"
+            on_press: root.go_to_homescreen5()
+
+<HomeScreen05>:
+    GridLayout:
+        cols: 1
+        canvas:
+            Color:
+                rgb: utils.get_color_from_hex("#34b7eb")
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    GridLayout:
+        cols: 1
+        padding: 20,20
+        Button:
+            size_hint: 1,.5
+            text: "Logout"
+            on_press: root.logout()
+
+        Label:
+            text: "English"
+            font_size: "20sp"
+
+        Label:
+            text: "Yellow"
+        
+        Label:
+            text: "Turkish"
+            font_size: "20sp"
+
+        Label:
+            text: "Sari"
+
+        Button:
+            size_hint: 1,.5
+            text: "Devam"
+
+<ScreenManager>:
+    LoginScreen:
+        name: "login_screen"
+    SignUpScreen:
+        name: "sign_up_screen"
+
+    SignUpSuccessScreen:
+        name: "sign_up_success_screen"
+
+    HomeScreen:
+        name: "home_screen"
+
+    HomeScreen02:
+        name: "home_screen02"
+
+    HomeScreen03:
+        name: "home_screen03"
+    
+    HomeScreen04:
+        name: "home_screen04"
+    
+    HomeScreen05:
+        name: "home_screen05"
